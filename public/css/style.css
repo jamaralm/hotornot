@@ -1,0 +1,177 @@
+/* public/css/style.css */
+
+/* --- Variáveis e Reset Básico --- */
+:root {
+    --primary-color: #007bff; /* Azul vibrante */
+    --background-color: #f4f7f6; /* Fundo cinza claro */
+    --card-background: #ffffff; /* Fundo do cartão branco */
+    --text-color: #333;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #222;
+    margin-bottom: 15px;
+}
+
+/* --- Container e Links --- */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* --- Estilo de Botões --- */
+button, .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover, .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* --- SMASH: Estilos para Votação (smash/index.blade.php) --- */
+/* ---------------------------------------------------------------------------------- */
+
+.smash-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.person-card {
+    text-align: center;
+    background: var(--card-background);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.person-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.person-card img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%; /* Fotos circulares */
+    border: 5px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.person-card button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* --- RANKING: Estilos para a Tabela (smash/ranking.blade.php) --- */
+/* ---------------------------------------------------------------------------------- */
+
+.ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.ranking-table th, .ranking-table td {
+    border: 1px solid #ddd;
+    padding: 15px 12px;
+    text-align: left;
+}
+
+.ranking-table th {
+    background-color: #e9ecef;
+    color: #555;
+    font-weight: 600;
+}
+
+.ranking-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.ranking-table .rank-number {
+    font-weight: bold;
+    text-align: center;
+    width: 50px;
+    font-size: 1.1em;
+}
+
+.ranking-table .person-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* --- FORMULÁRIO: Estilos para Adicionar Pessoa (persons/create.blade.php) --- */
+/* ---------------------------------------------------------------------------------- */
+
+form {
+    display: grid;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+}
